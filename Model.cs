@@ -22,9 +22,12 @@ namespace Movie_ZM
 
         public string Genre {get; set;}
 
-        public string studio {get; set;} //FK
-
-        public Studio Studio {get; set;} //navigation property, every movie has 1 studio
+        public Studio Studio {get; set;} //FK //navigation property, every movie has 1 studio
+        
+        public override string ToString()
+        {
+            return $"{Title} - Genre: {Genre}";
+        }
     }
 
     public class Studio
@@ -34,5 +37,10 @@ namespace Movie_ZM
         public string Name {get; set;}
 
         public List<Movie> Movies {get; set;} // navigation property
+
+        public override string ToString()
+        {
+            return $"{Name}";
+        }
     }
 }
